@@ -1,0 +1,246 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SwitchSequence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1148,1175" sap2010:WorkflowViewState.IdRef="SwitchSequence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="26">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SwitchSequence" sap:VirtualizedContainerService.HintSize="631,1010" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="589,60" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[String.Join(vbLf,Directory.GetFiles(Directory.GetCurrentDirectory+&quot;\files&quot;))]" />
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="589,817" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Directory.GetFiles(Directory.GetCurrentDirectory+&quot;\files&quot;)]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553,673" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="si:FileInfo" Name="file" />
+              <Variable x:TypeArguments="x:String" Name="fileName" />
+              <Variable x:TypeArguments="x:Boolean" Name="DirectoryExists" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="511,65" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="si:FileInfo">[file]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="si:FileInfo">[New FileInfo(item)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="511,65" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[fileName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[file.Name.Split("."c)(0)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[fileName.Substring(fileName.Length-4)]" sap:VirtualizedContainerService.HintSize="575,944" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <Switch.Default>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;No file found&quot;]" />
+              </Switch.Default>
+              <Sequence x:Key="2021" DisplayName="if file has 2021" sap:VirtualizedContainerService.HintSize="306,352" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="264,65" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[DirectoryExists]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">[Directory.Exists(Directory.GetCurrentDirectory+"\files\2021")]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[Not DirectoryExists]" sap:VirtualizedContainerService.HintSize="264,57" sap2010:WorkflowViewState.IdRef="If_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <ui:CreateDirectory ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Directory.GetCurrentDirectory+&quot;\files\2021&quot;]" />
+                  </If.Then>
+                </If>
+                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Directory.GetCurrentDirectory+&quot;\files\2021&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="264,57" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[file.FullName]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:MoveFile>
+              </Sequence>
+              <Sequence x:Key="2020" DisplayName="if file has 2020" sap:VirtualizedContainerService.HintSize="535,659" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="493,65" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[DirectoryExists]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">[Directory.Exists(Directory.GetCurrentDirectory+"\files\2020")]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[Not DirectoryExists]" sap:VirtualizedContainerService.HintSize="493,248" sap2010:WorkflowViewState.IdRef="If_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <ui:CreateDirectory ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[Directory.GetCurrentDirectory+&quot;\files\2020&quot;]" />
+                  </If.Then>
+                </If>
+                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Directory.GetCurrentDirectory+&quot;\files\2020&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="493,173" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="False" Path="[file.FullName]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:MoveFile>
+              </Sequence>
+              <Sequence x:Key="2019" DisplayName="if file has 2019" sap:VirtualizedContainerService.HintSize="535,659" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="493,65" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[DirectoryExists]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">[Directory.Exists(Directory.GetCurrentDirectory+"\files\2019")]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[Not DirectoryExists]" sap:VirtualizedContainerService.HintSize="493,248" sap2010:WorkflowViewState.IdRef="If_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <ui:CreateDirectory ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[Directory.GetCurrentDirectory+&quot;\files\2019&quot;]" />
+                  </If.Then>
+                </If>
+                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Directory.GetCurrentDirectory+&quot;\files\2019&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="493,173" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="False" Path="[file.FullName]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:MoveFile>
+              </Sequence>
+              <Sequence x:Key="2018" DisplayName="if file has 2018" sap:VirtualizedContainerService.HintSize="535,659" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="493,65" sap2010:WorkflowViewState.IdRef="Assign_6">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[DirectoryExists]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">[Directory.Exists(Directory.GetCurrentDirectory+"\files\2018")]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[Not DirectoryExists]" sap:VirtualizedContainerService.HintSize="493,248" sap2010:WorkflowViewState.IdRef="If_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <ui:CreateDirectory ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="CreateDirectory_4" Path="[Directory.GetCurrentDirectory+&quot;\files\2018&quot;]" />
+                  </If.Then>
+                </If>
+                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Directory.GetCurrentDirectory+&quot;\files\2018&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="493,173" sap2010:WorkflowViewState.IdRef="MoveFile_4" Overwrite="False" Path="[file.FullName]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:MoveFile>
+              </Sequence>
+            </Switch>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+  </Sequence>
+</Activity>
