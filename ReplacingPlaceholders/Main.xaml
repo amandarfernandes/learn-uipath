@@ -1,0 +1,115 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1148,1168" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Get input information and use it to fill in the placeholders in a string&#xD;&#xA;&#xD;&#xA;You have the following template: &quot;Hello Mr &lt;first_name&gt; &lt;last_name&gt;, we would like to invite you to our opening event next week on &lt;day_of_week&gt;. Please confirm by the end of current week.&#xD;&#xA;&#xD;&#xA;Create a workflow to get input from the user and replace the provided input data in the phrase above." DisplayName="ReplacePlaceholders" sap:VirtualizedContainerService.HintSize="376,1003" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="firstName" />
+      <Variable x:TypeArguments="x:String" Name="lastName" />
+      <Variable x:TypeArguments="x:String" Name="dayOfWeek" />
+      <Variable x:TypeArguments="x:String" Name="placeholderString">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">Hello Mr &lt;first_name&gt; &lt;last_name&gt;, we would like to invite you to our opening event next week on &lt;day_of_week&gt;. Please confirm by the end of current week.</Literal>
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Ask for First Name" sap:VirtualizedContainerService.HintSize="334,57" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="First Name: " Title="Placeholder First Name">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[firstName]</OutArgument>
+      </ui:InputDialog.Result>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InputDialog>
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Ask for Last Name" sap:VirtualizedContainerService.HintSize="334,57" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Last Name: " Title="Placeholder Last Name">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[lastName]</OutArgument>
+      </ui:InputDialog.Result>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InputDialog>
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Ask for Day of Week" sap:VirtualizedContainerService.HintSize="334,57" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Day of week: " Title="Placeholder day of the week">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[dayOfWeek]</OutArgument>
+      </ui:InputDialog.Result>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InputDialog>
+    <ui:Replace BuilderPattern="&lt;first_name&gt;" DisplayName="Replace first name" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[placeholderString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;&lt;first_name&gt;&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="&lt;first_name&gt;" RegexOption="IgnoreCase" Replacement="[StrConv(firstName.Trim,VbStrConv.ProperCase)]" Result="[placeholderString]" />
+    <ui:Replace BuilderPattern="&lt;first_name&gt;" DisplayName="Replace last name" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Replace_2" Input="[placeholderString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;&lt;first_name&gt;&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="&lt;last_name&gt;" RegexOption="IgnoreCase" Replacement="[StrConv(lastName.Trim,VbStrConv.ProperCase)]" Result="[placeholderString]" />
+    <ui:Replace BuilderPattern="&lt;first_name&gt;" DisplayName="Replace day of week" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Replace_3" Input="[placeholderString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;&lt;first_name&gt;&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="&lt;day_of_week&gt;" RegexOption="IgnoreCase" Replacement="[StrConv(dayOfWeek.Trim,VbStrConv.ProperCase)]" Result="[placeholderString]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,67" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[placeholderString]" />
+  </Sequence>
+</Activity>
