@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="VisualTree" sap:VirtualizedContainerService.HintSize="426,287" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="VisualTree" sap:VirtualizedContainerService.HintSize="1148,820" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
@@ -53,13 +53,13 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Visual Tree" sap:VirtualizedContainerService.HintSize="436,162" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence DisplayName="Visual Tree" sap:VirtualizedContainerService.HintSize="376,162" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Highlight HighlightTime="{x:Null}" Color="Gold" sap:VirtualizedContainerService.HintSize="334,69" sap2010:WorkflowViewState.IdRef="Highlight_3">
+    <ui:Highlight Color="Indigo" HighlightTime="500" sap:VirtualizedContainerService.HintSize="334,69" sap2010:WorkflowViewState.IdRef="Highlight_3">
       <ui:Highlight.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d4fd599d-ef18-4d29-885b-240688c8cb76" Selector="&lt;html title='Rpa Challenge' /&gt;&lt;webctrl tag='DIV' aaname='First Name' /&gt;&lt;webctrl tag='INPUT' /&gt;">
           <ui:Target.TimeoutMS>
