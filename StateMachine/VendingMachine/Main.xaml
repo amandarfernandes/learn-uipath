@@ -182,7 +182,7 @@
               <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Not getChange" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
             </Transition.Condition>
             <Transition.To>
-              <State x:Name="__ReferenceID1" DisplayName="Choose drink" sap:VirtualizedContainerService.HintSize="885,1226" sap2010:WorkflowViewState.IdRef="State_3">
+              <State x:Name="__ReferenceID1" DisplayName="Choose drink" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_3">
                 <State.Entry>
                   <Sequence sap:VirtualizedContainerService.HintSize="839,813" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
@@ -307,7 +307,7 @@
                       <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Not getChange" />
                     </Transition.Condition>
                     <Transition.To>
-                      <State x:Name="__ReferenceID2" DisplayName="Check for sufficient funds" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_5">
+                      <State x:Name="__ReferenceID2" DisplayName="Reorder question" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_5">
                         <State.Entry>
                           <Sequence sap:VirtualizedContainerService.HintSize="376,153" sap2010:WorkflowViewState.IdRef="Sequence_7">
                             <sap:WorkflowViewStateService.ViewState>
